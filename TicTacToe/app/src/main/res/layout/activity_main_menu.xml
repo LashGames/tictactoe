@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    android:background="@color/ripple_material_light"
+    tools:context="com.android.lash.tictactoe.MainMenu">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Single Player"
+        android:id="@+id/singlePlayerBtn"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Two Player"
+        android:id="@+id/twoPlayerBtn"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Network Game"
+        android:id="@+id/networkPlayerBtn"
+        />
+
+
+</LinearLayout>
