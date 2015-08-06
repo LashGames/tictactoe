@@ -14,7 +14,7 @@ import android.widget.EditText;
 public class GetPlayerNameDialog extends DialogFragment {
 
     public interface NoticeDialogListner{
-        public void onDialogPositiveClick(DialogFragment dialog,String player1_name,String player2_name);
+        public void onDialogPositiveClick(DialogFragment dialog,String player_name);
     }
     NoticeDialogListner dialogListner;
 
@@ -41,16 +41,15 @@ public class GetPlayerNameDialog extends DialogFragment {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        EditText player1_name = (EditText) view.findViewById(R.id.player1_name_txt);
-                        EditText player2_name = (EditText) view.findViewById(R.id.player2_name_txt);
-                        dialogListner.onDialogPositiveClick(GetPlayerNameDialog.this, player1_name.getText().toString(), player2_name.getText().toString());
+                        EditText player_name = (EditText) view.findViewById(R.id.player_name_txt);
+                        dialogListner.onDialogPositiveClick(GetPlayerNameDialog.this, player_name.getText().toString());
                     }
                 }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        GetPlayerNameDialog.this.getDialog().cancel();
-                    }
-                });
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                GetPlayerNameDialog.this.getDialog().cancel();
+            }
+        });
         return builder.create();
     }
 }

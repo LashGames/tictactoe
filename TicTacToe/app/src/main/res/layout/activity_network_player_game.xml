@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.android.lash.tictactoe.NetworkPlayerGameActivity">
+
+    <EditText
+        android:text="Enter Player1 ID"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/player1IdTxt"/>
+    <EditText
+        android:text="Enter Player2 ID"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/player2IdTxt"/>
+    <EditText
+        android:text="Enter Start Time"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/startTimeTxt"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="New Game"
+        android:layout_marginTop="200dp"
+        android:id="@+id/newGameBtn"/>
+
+</LinearLayout>

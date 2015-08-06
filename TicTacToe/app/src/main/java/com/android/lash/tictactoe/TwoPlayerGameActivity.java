@@ -1,9 +1,7 @@
 package com.android.lash.tictactoe;
 
 import android.app.DialogFragment;
-import android.content.DialogInterface;
 import android.graphics.Color;
-import android.net.wifi.p2p.WifiP2pManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class TwoPlayerGameActivity extends FragmentActivity implements GetPlayerNameDialog.NoticeDialogListner{
+public class TwoPlayerGameActivity extends FragmentActivity implements GetPlayerNamesDialog.NoticeDialogListner{
     private TextView player1_nameLbl;
     private TextView player2_nameLbl;
     private TextView gameStatusLbl;
@@ -68,7 +66,7 @@ public class TwoPlayerGameActivity extends FragmentActivity implements GetPlayer
         btn_8.setOnClickListener(btn_8_Listener);
         btn_9.setOnClickListener(btn_9_Listener);
 
-        DialogFragment playerNameDialog=new GetPlayerNameDialog();
+        DialogFragment playerNameDialog=new GetPlayerNamesDialog();
         playerNameDialog.show(getFragmentManager(), "playerNames");
 
         newGameBtn= (Button) findViewById(R.id.startNewTwoPLayerGameBtn);

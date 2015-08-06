@@ -11,4 +11,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_single_player_game">singlePlayerGameActivity</string>
     <string name="title_activity_two_player_game">twoPlayerGameActivity</string>
+    <string name="title_activity_single__player_">Single_Player_Activity</string>
 </resources>

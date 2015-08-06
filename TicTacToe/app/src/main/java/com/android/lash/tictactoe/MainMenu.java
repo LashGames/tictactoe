@@ -1,22 +1,12 @@
 package com.android.lash.tictactoe;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.wifi.p2p.WifiP2pManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-
-import com.facebook.FacebookSdk;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 public class MainMenu extends AppCompatActivity {
@@ -30,15 +20,15 @@ public class MainMenu extends AppCompatActivity {
         singlePLayerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent singlePlayerIntent=new Intent(MainMenu.this,SinglePlayerGameActivity.class);
+                Intent singlePlayerIntent=new Intent(MainMenu.this,Single_Player_Activity.class);
                 startActivity(singlePlayerIntent);
             }
         });
         twoPlayerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent singlePlayerIntent=new Intent(MainMenu.this,TwoPlayerGameActivity.class);
-                startActivity(singlePlayerIntent);
+                Intent twoPlayerIntent=new Intent(MainMenu.this,TwoPlayerGameActivity.class);
+                startActivity(twoPlayerIntent);
             }
         });
 

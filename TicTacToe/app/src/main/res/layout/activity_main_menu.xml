@@ -3,28 +3,35 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
-    android:background="@color/ripple_material_light"
+    android:background="@drawable/game_background"
     tools:context="com.android.lash.tictactoe.MainMenu">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Single Player"
+        android:background="@drawable/singleplayer_button"
+        android:layout_weight="1"
         android:id="@+id/singlePlayerBtn"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Two Player"
+        android:background="@drawable/muliplayer_button"
+        android:layout_weight="1"
         android:id="@+id/twoPlayerBtn"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Network Game"
+        android:background="@drawable/network_game_button"
+        android:layout_weight="1"
         android:id="@+id/networkPlayerBtn"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         />
 
 

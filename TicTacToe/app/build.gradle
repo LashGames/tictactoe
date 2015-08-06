@@ -25,4 +25,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.facebook.android:facebook-android-sdk:4.3.0'
+    compile files('apache-log4j-1.2.17/log4j-1.2.17.jar')
+    compile files('android-logging-log4j-1.0.3.jar')
 }

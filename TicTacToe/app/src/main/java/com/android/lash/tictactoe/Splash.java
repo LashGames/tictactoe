@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
@@ -16,17 +17,39 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import de.mindpipe.android.logging.log4j.LogConfigurator;
 
 
 public class Splash extends AppCompatActivity {
     MediaPlayer player;
     ImageView slideView;
     GestureDetectorCompat gestureDetectorCompat;
+    static Logger log;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        LogConfigurator logConfigurator = new LogConfigurator();
+        logConfigurator.setFileName(Environment.getExternalStorageDirectory()
+                + File.separator + "LaSh" + File.separator + "TicTacToe"
+                + File.separator + "log.txt");
+        logConfigurator.setRootLevel(Level.DEBUG);
+        logConfigurator.setLevel("org.apache", Level.ERROR);
+        logConfigurator.setFilePattern("%d %-5p [%c{2}]-[%L] %m%n");
+        logConfigurator.setMaxFileSize(1024 * 1024 * 5);
+        logConfigurator.setImmediateFlush(true);
+        logConfigurator.configure();
+        log = Logger.getLogger(Splash.class);
+        log.info("TicTaToe Started");
+
+
         setContentView(R.layout.activity_splash);
         slideView = (ImageView)findViewById(R.id.slide_view);
 
@@ -38,6 +61,7 @@ public class Splash extends AppCompatActivity {
                     //Toast.makeText(getBaseContext(),"Swipe Distance:"+diff,Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(Splash.this,MainMenu.class);
                     startActivity(intent);
+                    log.info("Enterted to MainMenu");
                 }
                 return super.onFling(e1, e2, velocityX, velocityY);
             }
@@ -72,7 +96,6 @@ public class Splash extends AppCompatActivity {
                         slideCount++;
                     }
                 });
-
             }
         }, 500, 150);
     }
@@ -108,7 +131,6 @@ public class Splash extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
